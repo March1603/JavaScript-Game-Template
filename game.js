@@ -23,10 +23,16 @@ class sprite {
   update() {
     this.draw();
     this.position.y += this.velocity.y;
+    this.position.x += this.velocity.x;
     if (this.position.y < 0) {
       this.position.y = 0;
     } else if (this.position.y > canvas.height - this.vari.height) {
       this.position.y = canvas.height - this.vari.height;
+    }
+    if (this.position.x < 0) {
+      this.position.x = 0;
+    } else if (this.position.x > canvas.width + this.vari.width) {
+      this.position.x = canvas.width - this.vari.width;
     }
   }
 }
